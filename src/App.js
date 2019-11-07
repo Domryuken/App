@@ -17,12 +17,12 @@ class App extends Component {
             <Navbar.Brand href="/">
               <img
                 alt=""
-                src="/logo.svg"
+                src="/coffeehouselogo.png"
                 width="30"
                 height="30"
                 className="d-inline-block align-top"
               />
-              {'Some Coffee Shop'}
+              {' Some Coffee Shop'}
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
