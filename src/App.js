@@ -1,26 +1,55 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import {OurCoffee} from './pages/OurCoffee';
+import {ContactUs} from './pages/ContactUs';
+import {Events} from './pages/Events';
+import {FindUs} from './pages/FindUs';
+import {BrowserRouter, Route, Switch} from 'react-router-dom'
+import {Nav, Navbar} from 'react-bootstrap'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <div>
+
+        <React.Fragment>
+          <Navbar bg="light" expand="lg">
+            <Navbar.Brand href="/">
+              <img
+                alt=""
+                src="/logo.svg"
+                width="30"
+                height="30"
+                className="d-inline-block align-top"
+              />
+              {'Some Coffee Shop'}
+            </Navbar.Brand>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
+              <Nav className="ml-auto">
+                <Nav.Link href="/">OUR COFFEE</Nav.Link>
+                <Nav.Link href="/events">EVENTS</Nav.Link>
+                <Nav.Link href="/find-us">FIND US</Nav.Link>
+                <Nav.Link href="/contact-us">CONTACT US</Nav.Link>
+              </Nav>
+            </Navbar.Collapse>
+          </Navbar>
+        </React.Fragment>
+
+        <React.Fragment>
+          <BrowserRouter>
+            <Switch>
+              <Route exact path="/" component={OurCoffee}/>
+              <Route exact path="/events" component={Events}/>
+              <Route exact path="/find-us" component={FindUs}/>
+              <Route exact path="/contact-us" component={ContactUs}/>
+            </Switch>
+          </BrowserRouter>
+        </React.Fragment>
+        
+      </div>
+    );
+  }
 }
 
 export default App;
